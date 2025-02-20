@@ -2,8 +2,6 @@
     "name": "lily58_rp2040",
     "vendorId": "0xB4C2",
     "productId": "0x8D1D",
-vendor_id = 0xB4C2
-product_id = 0x8D1D
     "lighting": "none",
     "matrix": {
         "rows": 5,
