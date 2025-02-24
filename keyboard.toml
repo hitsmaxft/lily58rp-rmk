@@ -1,6 +1,6 @@
 [keyboard]
-name = "lily58_rp2040"
-product_name = "lily58_rp2040"
+name = "lily58-rp2040-pio"
+product_name = "lily58-rp2040-pio"
 vendor_id = 0xB4C2
 product_id = 0x8D1D
 chip = "rp2040"
@@ -17,9 +17,9 @@ keymap = [
         ["Tab", "Q", "W", "E", "R", "T",                                            "Y", "U", "I", "O", "P", "Backslash"],
         ["LCtrl", "MT(A, LCtrl)", "MT(S,LAlt)", "MT(D,LGui)", "MT(F, LShift)",      "G",    "H", "MT(J,RShift)", "MT(K,RGui)", "MT(L, RAlt)", "MT(Semicolon, RCtrl)", "Quote"],
         ["LShift", "Z", "X", "C", "V", "B",                                         "N", "M", "Comma", "Dot", "Slash", "MT(Grave, RShift)"],
-        ["Kc1", "LAlt", "LGui", "MO(1)", "LT(3, Space)", "Kc1",                       "__", "Enter", "MO(2)", "LeftBracket", "RightBracket", "Kc1"]
+        ["__", "MO(4)", "LGui", "MO(1)", "LT(3, Space)", "Kc1",                       "__", "Enter", "MO(2)", "LeftBracket", "RightBracket", "__"]
     ],
-     # LLOWER layer (Layer 2)
+     # LLOWER layer (Layer 1)
      [
          ["_", "_", "_", "_", "_", "__", "__", "_", "_", "_", "_", "_"],
          ["__", "WM(Kc1, LShift)", "WM(Kc2, LShift)", "WM(Kc3, LShift)", "WM(Kc4, LShift)", "WM(Kc5, LShift)", "WM(Kc6, LShift)", "WM(Kc7, LShift)", "WM(Kc8, LShift)", "WM(Kc9, LShift)", "WM(Kc0, LShift)", "_"],
@@ -27,7 +27,7 @@ keymap = [
          ["_", "F7", "F8", "F9", "Tab", "F6", "WM(LeftBracket, LShift)", "WM(RightBracket, LShift)", "WM(Comma, LShift)", "WM(Dot, LShift)", "WM(Slash, LShift)", "WM(Grave, LShift)"],
          ["Kc2", "_", "_", "_", "_", "__", "__", "_", "_", "_", "_", "Kc2"]
      ],
-     #LRAISE layer (Layer 3)
+     #LRAISE layer (Layer 2)
      [
          ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
          ["_", "Kc1", "Kc2", "Kc3", "Kc4", "Kc5", "Kc6", "Kc7", "Kc8", "Kc9", "Kc0", "WM(Backslash, LShift)"],
@@ -37,16 +37,16 @@ keymap = [
      ],
     
     
-     # LFUNC layer (Layer 4)
+     # LFUNC layer (Layer 33
      [
          ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-         ["__", "_", "_", "MouseUp",  "PageUp", "PageDown",                      "_", "MouseWheelUp", "MouseWheelDown", "__", "__", "__"],
+         ["MO(4)", "_", "_", "MouseUp",  "PageUp", "PageDown",                      "_", "MouseWheelUp", "MouseWheelDown", "__", "__", "__"],
          ["_",      "_", "MouseLeft", "MouseDown", "MouseRight","__",              "Left", "Down", "UP", "Right", "__", "__"],
          ["_", "_", "_", "_","Home", "End",                    "MouseBtn1", "MouseBtn2", "Comma", "Dot", "Slash", "RShift"],
          ["Kc4", "_", "_", "_", "_", "__", "__", "_", "_", "_", "_", "Kc4"]
      ],
     
-     # LDEBUG layer (Layer 5)
+     # LDEBUG layer (Layer 4)
      [
          ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
          ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
@@ -67,7 +67,7 @@ clear_storage = true
 enabled = false
 
 [behavior]
-tap_hold = { enable_hrm = true, prior_idle_time = "120ms", hold_timeout = "250ms", post_wait_time = "50ms"}
+tap_hold = { enable_hrm = true, prior_idle_time = "120ms", hold_timeout = "150ms", post_wait_time = "50ms"}
 
 [split]
 
@@ -84,7 +84,7 @@ col_offset = 0
 
 ## nice nanov2 pin info https://www.nologo.tech/product/otherboard/NRF52840.html#%E4%BA%A7%E5%93%81%E5%8F%82%E6%95%B0
 ## pin 1 0
-serial = [{ instance = "UART0", tx_pin = "PIN_0", rx_pin = "PIN_1" }]
+serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 
 [split.central.matrix]
 
@@ -101,7 +101,7 @@ cols = 6
 row_offset = 0
 col_offset = 6
 #ble_addr = [0x7e, 0xfe, 0x73, 0x9e, 0x66, 0xe3]
-serial = [{ instance = "UART0", tx_pin = "PIN_0", rx_pin = "PIN_1" }]
+serial = [{ instance = "PIO0", tx_pin = "PIN_1", rx_pin = "PIN_1" }]
 
 [split.peripheral.matrix]
 
